@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
-import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowUpRight, Sparkles, Download } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "İstatistikler", href: "#istatistikler" },
@@ -29,7 +29,6 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Escape tuşu ile mobil menüyü kapatma
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && mobileMenuOpen) {
@@ -62,18 +61,17 @@ export const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 no-print ${
         isScrolled
-          ? "bg-[#07080b]/90 backdrop-blur-md border-b border-neutral-800/80 py-3 shadow-xl shadow-black/40"
-          : "bg-transparent py-5"
+          ? "bg-[#050507]/90 backdrop-blur-md border-b border-white/[0.06] py-2.5 shadow-xl shadow-black/50"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Logo size="md" />
 
           {/* Desktop Nav */}
           <nav
-            className="hidden lg:flex items-center gap-1 xl:gap-2 px-3 py-1.5 rounded-full bg-neutral-900/60 border border-neutral-800/80 backdrop-blur-sm shadow-inner"
+            className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-neutral-900/60 border border-white/[0.06] backdrop-blur-md"
             aria-label="Ana Menü"
           >
             {NAV_LINKS.map((link) => (
@@ -84,7 +82,7 @@ export const Header: React.FC = () => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="px-3 py-1.5 text-xs font-medium text-neutral-300 hover:text-white hover:bg-neutral-800/60 rounded-full transition-all duration-200"
+                className="px-3 py-1 text-xs font-medium text-neutral-300 hover:text-white hover:bg-white/[0.06] rounded-full transition-all"
               >
                 {link.label}
               </a>
@@ -92,7 +90,17 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            <a
+              href="/capitis-media-kit.pdf"
+              download="CAPITIS-Creator-Media-Kit.pdf"
+              className="px-3 py-1.5 rounded-xl border border-white/[0.08] hover:border-amber-400/50 text-xs font-mono text-neutral-300 hover:text-white transition-all flex items-center gap-1.5 bg-neutral-900/50"
+              title="Medya Kitini PDF İndir"
+            >
+              <Download className="w-3.5 h-3.5 text-amber-400" />
+              <span>PDF Kit</span>
+            </a>
+
             <a
               href="#iletisim"
               onClick={(e) => {
@@ -103,6 +111,7 @@ export const Header: React.FC = () => {
               <Button
                 size="sm"
                 variant="primary"
+                className="btn-aurora"
                 leftIcon={<Sparkles className="w-3.5 h-3.5 text-black" />}
                 rightIcon={<ArrowUpRight className="w-3.5 h-3.5 text-black" />}
               >
@@ -120,7 +129,7 @@ export const Header: React.FC = () => {
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -131,9 +140,9 @@ export const Header: React.FC = () => {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 top-[60px] bg-black/95 backdrop-blur-xl z-40 sm:hidden flex flex-col p-6 animate-in fade-in duration-200 overflow-y-auto"
+          className="fixed inset-0 top-[56px] bg-black/95 backdrop-blur-xl z-40 sm:hidden flex flex-col p-6 animate-in fade-in duration-200 overflow-y-auto"
         >
-          <nav className="flex flex-col gap-2 mt-4" aria-label="Mobil Menü">
+          <nav className="flex flex-col gap-1.5 mt-2" aria-label="Mobil Menü">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -142,14 +151,23 @@ export const Header: React.FC = () => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="px-4 py-3 text-lg font-medium text-neutral-200 hover:text-amber-400 hover:bg-neutral-900/60 rounded-xl transition-colors border border-transparent hover:border-neutral-800"
+                className="px-4 py-2.5 text-base font-medium text-neutral-200 hover:text-amber-400 hover:bg-neutral-900/60 rounded-xl transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="mt-8 pt-6 border-t border-neutral-800 flex flex-col gap-3">
+          <div className="mt-6 pt-5 border-t border-neutral-800 flex flex-col gap-2.5">
+            <a
+              href="/capitis-media-kit.pdf"
+              download="CAPITIS-Creator-Media-Kit.pdf"
+              className="w-full py-3 px-4 rounded-xl border border-neutral-700 bg-neutral-900 text-sm font-medium text-center text-white flex items-center justify-center gap-2"
+            >
+              <Download className="w-4 h-4 text-amber-400" />
+              <span>Medya Kitini İndir (PDF)</span>
+            </a>
+
             <a
               href="#iletisim"
               onClick={(e) => {
@@ -161,7 +179,7 @@ export const Header: React.FC = () => {
               <Button
                 size="lg"
                 variant="primary"
-                className="w-full justify-center"
+                className="w-full justify-center btn-aurora"
                 rightIcon={<ArrowUpRight className="w-4 h-4 text-black" />}
               >
                 İş Birliği Başlat

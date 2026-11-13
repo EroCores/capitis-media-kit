@@ -11,7 +11,6 @@ export const ChessKnightScene: React.FC = () => {
     const container = mountRef.current;
     if (!container) return;
 
-    // WebGL desteğini kontrol et
     try {
       const canvas = document.createElement("canvas");
       const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
@@ -24,16 +23,14 @@ export const ChessKnightScene: React.FC = () => {
       return;
     }
 
-    // Prefers reduced motion kontrolü
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // 1. Scene, Camera, Renderer
-    const width = container.clientWidth || 400;
-    const height = container.clientHeight || 400;
+    const width = container.clientWidth || 380;
+    const height = container.clientHeight || 380;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    camera.position.set(0, 0, 7.5);
+    camera.position.set(0, 0, 8);
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -43,119 +40,161 @@ export const ChessKnightScene: React.FC = () => {
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.1;
+    renderer.toneMappingExposure = 1.25;
 
     container.appendChild(renderer.domElement);
 
-    // 2. Geometrik Stratejik Satranç Taşı Objesi
-    const chessGroup = new THREE.Group();
+    // Kinetik 2040 Stratejik Çekirdek Grubu
+    const masterGroup = new THREE.Group();
 
-    // Taban (Base)
-    const baseGeo = new THREE.CylinderGeometry(1.6, 1.8, 0.4, 32);
-    const goldMaterial = new THREE.MeshStandardMaterial({
-      color: 0xdeb86a,
-      metalness: 0.85,
-      roughness: 0.25,
-      wireframe: false,
+    // 1. Dış Jiroskopik Orbital Halka (Outer Ring)
+    const ring1Geo = new THREE.TorusGeometry(2.35, 0.022, 16, 100);
+    const ring1Mat = new THREE.MeshStandardMaterial({
+      color: 0xd4a843,
+      metalness: 0.95,
+      roughness: 0.15,
+      emissive: 0x4a3610,
+      emissiveIntensity: 0.3,
     });
-    const baseMesh = new THREE.Mesh(baseGeo, goldMaterial);
-    baseMesh.position.y = -1.8;
-    chessGroup.add(baseMesh);
+    const ring1 = new THREE.Mesh(ring1Geo, ring1Mat);
+    masterGroup.add(ring1);
 
-    // Gövde (Body rings)
-    const midGeo = new THREE.CylinderGeometry(1.2, 1.5, 0.5, 32);
-    const midMesh = new THREE.Mesh(midGeo, goldMaterial);
-    midMesh.position.y = -1.4;
-    chessGroup.add(midMesh);
-
-    // At Başı Geometrik Heykeli (Faceted Geometric Knight)
-    const knightShape = new THREE.IcosahedronGeometry(1.3, 1);
-    const knightMat = new THREE.MeshStandardMaterial({
-      color: 0xebd298,
+    // 2. İç Orbital Halka (Inner Ring - Dik Açı)
+    const ring2Geo = new THREE.TorusGeometry(1.95, 0.018, 16, 80);
+    const ring2Mat = new THREE.MeshStandardMaterial({
+      color: 0xa78bfa,
       metalness: 0.9,
       roughness: 0.2,
-      flatShading: true,
+      emissive: 0x2e1065,
+      emissiveIntensity: 0.4,
     });
-    const knightMesh = new THREE.Mesh(knightShape, knightMat);
-    knightMesh.position.set(0, 0.1, 0);
-    knightMesh.scale.set(0.9, 1.4, 1.1);
-    chessGroup.add(knightMesh);
+    const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
+    ring2.rotation.x = Math.PI / 2.5;
+    masterGroup.add(ring2);
 
-    // Tepe Tacı (Crown / Apex)
-    const crownGeo = new THREE.OctahedronGeometry(0.55);
-    const crownMat = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
+    // 3. Fasetli Kuantum Çekirdek (Icosahedron Core)
+    const coreGeo = new THREE.IcosahedronGeometry(1.2, 1);
+    const coreMat = new THREE.MeshStandardMaterial({
+      color: 0xf5df9e,
       metalness: 0.95,
-      roughness: 0.1,
+      roughness: 0.15,
+      flatShading: true,
+      wireframe: false,
     });
-    const crownMesh = new THREE.Mesh(crownGeo, crownMat);
-    crownMesh.position.set(0, 1.5, 0);
-    chessGroup.add(crownMesh);
+    const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+    masterGroup.add(coreMesh);
 
-    scene.add(chessGroup);
+    // 4. Kafes Katmanı (Wireframe Lattice)
+    const wireGeo = new THREE.IcosahedronGeometry(1.4, 1);
+    const wireMat = new THREE.MeshBasicMaterial({
+      color: 0xd4a843,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.35,
+    });
+    const wireMesh = new THREE.Mesh(wireGeo, wireMat);
+    masterGroup.add(wireMesh);
 
-    // 3. Ortam Parçacıkları (Ambient Gold Dust / Particles)
-    const particleCount = 70;
+    // 5. Merkez Foton Noktası (Apex Crystal)
+    const apexGeo = new THREE.OctahedronGeometry(0.4);
+    const apexMat = new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      metalness: 1,
+      roughness: 0.05,
+      emissive: 0xffe6a3,
+      emissiveIntensity: 0.8,
+    });
+    const apexMesh = new THREE.Mesh(apexGeo, apexMat);
+    apexMesh.position.y = 1.6;
+    masterGroup.add(apexMesh);
+
+    scene.add(masterGroup);
+
+    // 6. 2040 Yıldız Tozu & Telemetri Parçacıkları (Nebula Field)
+    const particleCount = 120;
     const particleGeo = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 10;
-      positions[i + 1] = (Math.random() - 0.5) * 8;
-      positions[i + 2] = (Math.random() - 0.5) * 6;
+      positions[i] = (Math.random() - 0.5) * 11;
+      positions[i + 1] = (Math.random() - 0.5) * 9;
+      positions[i + 2] = (Math.random() - 0.5) * 7;
     }
 
     particleGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     const particleMat = new THREE.PointsMaterial({
-      color: 0xe5b869,
-      size: 0.05,
+      color: 0xf0d68a,
+      size: 0.045,
       transparent: true,
-      opacity: 0.6,
+      opacity: 0.75,
       blending: THREE.AdditiveBlending,
     });
     const particles = new THREE.Points(particleGeo, particleMat);
     scene.add(particles);
 
-    // 4. Işıklandırma (Dramatic Studio Lighting)
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    // 7. Işık Sistemi
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
     scene.add(ambientLight);
 
-    const keyLight = new THREE.DirectionalLight(0xffe6a3, 2.5);
-    keyLight.position.set(5, 5, 5);
-    scene.add(keyLight);
+    const goldKeyLight = new THREE.DirectionalLight(0xffd77a, 3.2);
+    goldKeyLight.position.set(6, 6, 6);
+    scene.add(goldKeyLight);
 
-    const rimLight = new THREE.DirectionalLight(0x7393ff, 1.8);
-    rimLight.position.set(-5, -2, -4);
-    scene.add(rimLight);
+    const violetRimLight = new THREE.DirectionalLight(0x8b5cf6, 2.5);
+    violetRimLight.position.set(-6, -3, -5);
+    scene.add(violetRimLight);
 
-    // 5. Mouse Parallax Etkileşimi
-    let targetRotationX = 0;
-    let targetRotationY = 0;
+    const centerGlow = new THREE.PointLight(0xd4a843, 2, 8);
+    centerGlow.position.set(0, 0, 0);
+    scene.add(centerGlow);
+
+    // 8. İnteraktif Fare Takibi
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
-
-      targetRotationY = x * 0.45;
-      targetRotationX = y * 0.3;
+      targetX = x * 0.6;
+      targetY = y * 0.45;
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
-    // 6. Animasyon Döngüsü
+    // 9. Animasyon
     let animationFrameId: number;
+    let clock = new THREE.Clock();
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
+      const elapsedTime = clock.getElapsedTime();
 
       if (!prefersReducedMotion) {
-        chessGroup.rotation.y += 0.007;
-        particles.rotation.y += 0.001;
+        // Yumuşak fare sönümlemesi
+        mouseX += (targetX - mouseX) * 0.06;
+        mouseY += (targetY - mouseY) * 0.06;
 
-        // Smooth damping parallax
-        chessGroup.rotation.x += (targetRotationX - chessGroup.rotation.x) * 0.05;
-        chessGroup.position.y = Math.sin(Date.now() * 0.0015) * 0.12;
+        masterGroup.rotation.y = elapsedTime * 0.4 + mouseX;
+        masterGroup.rotation.x = mouseY * 0.8;
+
+        // Jiroskopik zıt orbital dönüşler
+        ring1.rotation.z = elapsedTime * 0.6;
+        ring1.rotation.x = Math.sin(elapsedTime * 0.3) * 0.35;
+
+        ring2.rotation.y = -elapsedTime * 0.8;
+        ring2.rotation.z = Math.cos(elapsedTime * 0.4) * 0.3;
+
+        wireMesh.rotation.y = -elapsedTime * 0.2;
+        apexMesh.rotation.y = elapsedTime * 1.2;
+
+        // Mikro nefes alma efekti
+        const pulse = 1 + Math.sin(elapsedTime * 1.5) * 0.035;
+        coreMesh.scale.set(pulse, pulse, pulse);
+
+        particles.rotation.y = elapsedTime * 0.04;
       }
 
       renderer.render(scene, camera);
@@ -163,7 +202,6 @@ export const ChessKnightScene: React.FC = () => {
 
     animate();
 
-    // 7. Resize Handler
     const handleResize = () => {
       if (!container) return;
       const newWidth = container.clientWidth;
@@ -175,21 +213,23 @@ export const ChessKnightScene: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
 
       renderer.dispose();
-      baseGeo.dispose();
-      midGeo.dispose();
-      knightShape.dispose();
-      crownGeo.dispose();
-      goldMaterial.dispose();
-      knightMat.dispose();
-      crownMat.dispose();
+      ring1Geo.dispose();
+      ring2Geo.dispose();
+      coreGeo.dispose();
+      wireGeo.dispose();
+      apexGeo.dispose();
       particleGeo.dispose();
+      ring1Mat.dispose();
+      ring2Mat.dispose();
+      coreMat.dispose();
+      wireMat.dispose();
+      apexMat.dispose();
       particleMat.dispose();
 
       if (container.contains(renderer.domElement)) {
@@ -200,9 +240,9 @@ export const ChessKnightScene: React.FC = () => {
 
   if (!webglSupported) {
     return (
-      <div className="w-full h-full flex items-center justify-center p-8">
-        <div className="w-48 h-48 rounded-full border border-amber-400/30 bg-gradient-to-br from-amber-400/10 via-neutral-900 to-black flex items-center justify-center shadow-2xl">
-          <span className="text-6xl select-none" aria-label="Stratejik Satranç Taşı">♟</span>
+      <div className="w-full h-full flex items-center justify-center p-6">
+        <div className="w-40 h-40 rounded-full border border-amber-400/30 bg-gradient-to-br from-amber-400/10 via-neutral-900 to-black flex items-center justify-center shadow-2xl">
+          <span className="text-5xl select-none" aria-label="Kinetik Çekirdek">◈</span>
         </div>
       </div>
     );
@@ -211,7 +251,7 @@ export const ChessKnightScene: React.FC = () => {
   return (
     <div
       ref={mountRef}
-      className="w-full h-full min-h-[350px] sm:min-h-[420px] lg:min-h-[500px] flex items-center justify-center cursor-grab active:cursor-grabbing"
+      className="w-full h-full min-h-[300px] sm:min-h-[360px] lg:min-h-[400px] flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
       aria-hidden="true"
     />
   );

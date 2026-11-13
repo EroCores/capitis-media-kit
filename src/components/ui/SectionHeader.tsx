@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -19,21 +21,21 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <div
       className={cn(
-        "max-w-3xl mb-12 md:mb-16",
+        "max-w-2xl mb-10 md:mb-14",
         align === "center" ? "mx-auto text-center" : "text-left",
         className
       )}
     >
       {eyebrow && (
-        <span className="inline-block text-xs uppercase tracking-[0.25em] text-amber-400 font-mono font-semibold mb-3 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20">
+        <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.25em] text-amber-400 font-mono font-semibold mb-3 px-3 py-1 rounded-full bg-amber-400/[0.08] border border-amber-400/20">
           {eyebrow}
         </span>
       )}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-tight uppercase leading-[1.15]">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base sm:text-lg text-neutral-400 font-normal leading-relaxed">
+        <p className="mt-3 text-sm sm:text-base text-neutral-400 leading-relaxed">
           {subtitle}
         </p>
       )}

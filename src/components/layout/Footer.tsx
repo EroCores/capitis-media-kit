@@ -2,25 +2,25 @@ import React from "react";
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/config/site";
-import { Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, MessageCircle, ArrowUpRight, Download } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-neutral-900 bg-black/80 pt-16 pb-12 text-neutral-400 no-print">
+    <footer className="border-t border-white/[0.06] bg-black/90 pt-14 pb-10 text-neutral-400 no-print">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-neutral-850">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-neutral-900">
           {/* Kolon 1-2: Marka Kimliği */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-3">
             <Logo size="md" />
-            <p className="text-xs sm:text-sm text-neutral-400 max-w-sm leading-relaxed mt-2">
+            <p className="text-xs sm:text-sm text-neutral-400 max-w-sm leading-relaxed">
               {siteConfig.tagline} Vizyon, disiplin ve irade üzerine inşa edilen stratejik video içerikleriyle markaları nitelikli kitlelerle buluşturuyoruz.
             </p>
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-2">
               <a
                 href={siteConfig.tiktok.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 rounded-xl bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-300 hover:text-white hover:border-amber-400/50 transition-all flex items-center gap-1.5"
+                className="px-3 py-1 rounded-lg bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-300 hover:text-white hover:border-amber-400/50 transition-all flex items-center gap-1.5"
               >
                 <span>TikTok: {siteConfig.tiktok.handle}</span>
                 <ArrowUpRight className="w-3 h-3 text-neutral-500" />
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
                 href={siteConfig.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 rounded-xl bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-300 hover:text-white hover:border-amber-400/50 transition-all flex items-center gap-1.5"
+                className="px-3 py-1 rounded-lg bg-neutral-900 border border-neutral-800 text-xs font-mono text-neutral-300 hover:text-white hover:border-amber-400/50 transition-all flex items-center gap-1.5"
               >
                 <span>Instagram: {siteConfig.instagram.handle}</span>
                 <ArrowUpRight className="w-3 h-3 text-neutral-500" />
@@ -40,10 +40,10 @@ export const Footer: React.FC = () => {
 
           {/* Kolon 3: Navigasyon */}
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-4">
+            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-3">
               BÖLÜMLER
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-1.5 text-xs">
               <li>
                 <a href="#istatistikler" className="hover:text-amber-400 transition-colors">
                   TikTok Metrikleri
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#kitle" className="hover:text-amber-400 transition-colors">
-                  Kitle & Yaş Demografisi
+                  Kitle Demografisi
                 </a>
               </li>
               <li>
@@ -61,17 +61,12 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#icerikler" className="hover:text-amber-400 transition-colors">
-                  İçerik Dünyamız
+                  İçerik Vitrini
                 </a>
               </li>
               <li>
                 <a href="#paketler" className="hover:text-amber-400 transition-colors">
                   İş Birliği Paketleri
-                </a>
-              </li>
-              <li>
-                <a href="#surec" className="hover:text-amber-400 transition-colors">
-                  Çalışma Süreci
                 </a>
               </li>
               <li>
@@ -82,12 +77,22 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Kolon 4: Yasal Bilgilendirme */}
+          {/* Kolon 4: Yasal & Kaynaklar */}
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-4">
-              YASAL & GÜVENCE
+            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-3">
+              KAYNAKLAR
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-1.5 text-xs">
+              <li>
+                <a
+                  href="/capitis-media-kit.pdf"
+                  download="CAPITIS-Creator-Media-Kit.pdf"
+                  className="text-amber-400 hover:text-amber-300 flex items-center gap-1 font-medium"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Medya Kiti (PDF)</span>
+                </a>
+              </li>
               <li>
                 <Link href="/privacy" className="hover:text-amber-400 transition-colors">
                   Gizlilik Politikası
@@ -95,12 +100,12 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/kvkk" className="hover:text-amber-400 transition-colors">
-                  KVKK Aydınlatma Metni
+                  KVKK Aydınlatma
                 </Link>
               </li>
               <li>
                 <Link href="/cookies" className="hover:text-amber-400 transition-colors">
-                  Çerez Bilgilendirmesi
+                  Çerez Politikası
                 </Link>
               </li>
               <li>
@@ -113,10 +118,10 @@ export const Footer: React.FC = () => {
 
           {/* Kolon 5: Doğrudan İletişim */}
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-4">
-              DOĞRUDAN İLETİŞİM
+            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-3">
+              İLETİŞİM
             </h4>
-            <ul className="space-y-3 text-xs">
+            <ul className="space-y-2.5 text-xs">
               <li>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
@@ -141,11 +146,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Alt Satır: Telif & Beyan */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-500 font-mono">
+        {/* Alt Satır */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-neutral-500 font-mono">
           <p>{siteConfig.copyright}</p>
           <p>
-            VİZYON · DİSİPLİN · İRADE — Bu site statik olarak derlenmiş resmi creator medya kitidir.
+            VİZYON · DİSİPLİN · İRADE — Resmi Creator Medya Kiti
           </p>
         </div>
       </div>
