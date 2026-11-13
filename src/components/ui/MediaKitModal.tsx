@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { X, Download, ExternalLink, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import { Button } from "./Button";
+import { getAssetPath } from "@/lib/utils";
 
 interface MediaKitModalProps {
   isOpen: boolean;
@@ -20,6 +21,7 @@ const PAGES = [
 
 export const MediaKitModal: React.FC<MediaKitModalProps> = ({ isOpen, onClose }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const pdfDownloadUrl = getAssetPath("/capitis-media-kit.pdf");
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -70,7 +72,7 @@ export const MediaKitModal: React.FC<MediaKitModalProps> = ({ isOpen, onClose })
           <div className="flex items-center gap-2">
             {/* Doğrudan İndir Butonu */}
             <a
-              href="/capitis-media-kit.pdf"
+              href={pdfDownloadUrl}
               download="CAPITIS-Is-Birligi-Paketleri-Media-Kit.pdf"
               className="inline-flex"
             >
@@ -85,7 +87,7 @@ export const MediaKitModal: React.FC<MediaKitModalProps> = ({ isOpen, onClose })
 
             {/* Yeni Sekmede Aç */}
             <a
-              href="/capitis-media-kit.pdf"
+              href={pdfDownloadUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors hidden sm:flex items-center justify-center"

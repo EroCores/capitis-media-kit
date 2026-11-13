@@ -1,35 +1,150 @@
-# CAPİTİS — Creator Media Kit & Marka İş Birlikleri Web Platformu
+<div align="center">
 
-Bu proje, **CAPİTİS** (@capitis.tr) içerik üreticisinin marka iş birlikleri, TikTok performans metrikleri, kitle analitiği ve sponsorluk paketlerini profesyonelce sunan modern web sitesidir.
+```
+  ██████╗ █████╗ ██████╗ ██╗████████╗██╗███████╗
+ ██╔════╝██╔══██╗██╔══██╗██║╚══██╔══╝██║██╔════╝
+ ██║     ███████║██████╔╝██║   ██║   ██║███████╗
+ ██║     ██╔══██║██╔═══╝ ██║   ██║   ██║╚════██║
+ ╚██████╗██║  ██║██║     ██║   ██║   ██║███████║
+  ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝╚══════╝
+```
+
+# 👑 CAPİTİS — Creator Media Kit & Collaboration Platform
+### *“Zihin setini sıradanlıktan kurtar. Hayatını yeniden inşa et.”*
+
+[![Live Demo](https://img.shields.io/badge/🌐_CANLI_SİTE-erocores.github.io%2Fcapitis--media--kit-FFD700?style=for-the-badge&logo=googlechrome&logoColor=black)](https://erocores.github.io/capitis-media-kit/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-EroCores%2Fcapitis--media--kit-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/EroCores/capitis-media-kit)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.4.6-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Three.js](https://img.shields.io/badge/Three.js-WebGL_2040-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![TikTok Studio](https://img.shields.io/badge/TikTok_Studio-2.4M+_Views-black?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@capitis.tr)
+
+<br/>
+
+**[🚀 CANLI DEMOYU İNCELE](https://erocores.github.io/capitis-media-kit/)** &nbsp;•&nbsp; **[📄 MEDYA KİTİ (PDF)](https://erocores.github.io/capitis-media-kit/capitis-media-kit.pdf)** &nbsp;•&nbsp; **[💬 WHATSAPP TEKLİF](https://wa.me/905382445177)**
 
 ---
 
-## ⚡ Kullanılan Teknolojiler
+</div>
 
-- **Framework:** Next.js 16 (App Router, Static Export `output: 'export'`)
-- **Kütüphane:** React 19
-- **Stil & Tasarım:** Tailwind CSS v4 (Obsidian & Luxury Gold Teması)
-- **3D Deneyim:** Three.js (Etkileşimli Geometrik Satranç Taşı ve Parçacık Sahnesi)
-- **Akıcı Kaydırma:** Lenis Smooth Scroll
-- **İkonlar:** Lucide React
-- **Tip & Şema Doğrulama:** TypeScript (Strict Mode) & Zod
-- **Birim Testler:** Vitest
+## 🌟 Projeye Genel Bakış
+
+**CAPİTİS** (@capitis.tr), kişisel gelişim, zihniyet (mindset), disiplin ve vizyon alanında Türkiye'nin önde gelen içerik üreticilerinden biridir. Bu web platformu, markaların ve reklamverenlerin CAPİTİS ile sponsorluk, reklam entegrasyonu ve UGC (User Generated Content) ortaklıklarını en üst düzeyde yapılandırabilmesi için **2040 nesil fütüristik arayüz ve interaktif stüdyo konfigüratörü** ile geliştirilmiştir.
 
 ---
 
-## 🚀 Hızlı Başlangıç
+## 🚀 Öne Çıkan Özellikler
 
-### Gereksinimler
-- Node.js 18+ (Node 20 veya 24 önerilir)
-- npm veya pnpm
+### 🌌 1. Kinetik Jiroskopik 3D Kuantum Çekirdek (Three.js WebGL)
+- Çift zıt orbital ekseninde dönen altın ve mor titanyum halkalar.
+- Fare konumunu sönümleyerek (damping) takip eden interaktif paralaks tepkisi.
+- 120 parçacıklı uzay tozu nebulası ve mikro nabız animasyonu.
+- Düşük donanımlı cihazlar veya WebGL desteklemeyen tarayıcılar için otomatik 2D fallback.
 
-### Kurulum ve Çalıştırma
+### 📱 2. Sinematik 9:16 Akıllı Telefon Video Vitrini
+- Dikey iPhone/Titanyum kasa tasarımı ile gerçekçi TikTok arayüzü overlay'i (`❤️ Beğeni`, `💬 Yorum`, `🔖 Kaydet`, `↗️ Paylaş`).
+- Orijinal ses dönen vinil diski ve kanca (hook) metinleri.
+- Tümü, Disiplin, Motivasyon, Mindset, Başarı, Vizyon ve Kişisel Gelişim filtreleme sekmeleri.
+
+### 🎛️ 3. İnteraktif Stüdyo & Teklif Yapılandırıcı (Canlı Hesaplayıcı)
+- 5 farklı iş birliği paketi seçimi.
+- Modüler ek hizmetler (Spark Ads Lisansı, 48-72s Ekspres Teslimat, 4K Ham Çekim, Instagram Reels/Story, 3 Alternatif Kanca).
+- Seçimlere göre anlık olarak güncellenen **"Tahmini Toplam Yatırım"** ve **"Teslimat Süresi"** hesaplama motoru.
+- Tek tıkla **WhatsApp** veya **E-posta İstemcisi** ile brief iletimi.
+
+### 📑 4. Entegre 5 Sayfalık Medya Kiti Görüntüleyici & PDF İndirme
+- Sitenin içinden çıkmadan yüksek çözünürlükte slayt olarak incelenebilen interaktif modal.
+- Tek tıkla orijinal 5 sayfalık vektörel PDF dosyasını cihaza indirme.
+
+---
+
+## 📊 Doğrulanmış TikTok Studio Metrikleri (13 Kasım 2026)
+
+| Metrik | Değer | Kapsam / Detay |
+| :--- | :--- | :--- |
+| **Video Görüntüleme** | **2,4 Milyon+** | Son 365 gün organik TikTok akışı |
+| **Toplam Tekil İzleyici** | **1,8 Milyon** | Hesabın temas ettiği bağımsız karar vericiler |
+| **Yeni İzleyici Oranı** | **1,4 Milyon** | Sürekli organik genişleme |
+| **Organik Paylaşım** | **11,2 Bin+** | Viral yayılım ve topluluk gücü |
+| **Profil Görüntüleme** | **8,7 Bin+** | Biyo link ve marka yönlendirme trafiği |
+| **Sizin İçin (For You)** | **%80,1** | Doğrudan algoritmik keşif önerisi |
+| **Çekirdek Yaş Kitlesi** | **%80,6** | 18–34 yaş arası kariyer ve başarı odaklı gençler |
+| **Cinsiyet Dengesi** | **%69 Erkek / %29 Kadın** | Teknoloji, finans, giyim ve erkek bakım uyumlu |
+
+---
+
+## 💎 İş Birliği Paketleri Karşılaştırma Matrisi
+
+```
+┌─────────────────────────┬──────────────┬──────────────┬─────────────────────────┐
+│ PAKET ADI               │ VİDEO SAYISI │ YATIRIM      │ ÖNE ÇIKAN AYRICALIKLAR  │
+├─────────────────────────┼──────────────┼──────────────┼─────────────────────────┤
+│ Mini Paket              │ 1 Video      │ ₺350         │ Düşük bütçeyle ilk test │
+│ Başlangıç Paketi ★      │ 2 Video      │ ₺650         │ 2 farklı kurgu (%7 tas) │
+│ Avantajlı Paket         │ 3 Video      │ ₺900         │ 3'lü seri kampanya      │
+│ VIP Büyüme Serisi 👑    │ 5 Video      │ ₺1.650       │ Spark Ads Lisansı Dahil │
+│ 360° Kurumsal / UGC     │ 8+ Video     │ Özel Teklif  │ Tam ticari reklam hakkı │
+└─────────────────────────┴──────────────┴──────────────┴─────────────────────────┘
+```
+
+---
+
+## 🛠️ Teknoloji Mimarisi
+
+- **Framework:** [Next.js 16 (App Router)](https://nextjs.org/) — Tamamen statik derleme (`output: 'export'`)
+- **UI Kütüphanesi:** [React 19](https://react.dev/)
+- **Stil & Tasarım Tokenları:** [Tailwind CSS v4](https://tailwindcss.com/) — Obsidian `#050507`, Titanyum ve Lüks Altın `#d4a843`
+- **3D Motor:** [Three.js](https://threejs.org/) WebGL Canvas
+- **Pürüzsüz Kaydırma:** [Lenis Smooth Scroll](https://lenis.darkroom.engineering/)
+- **İkonlar:** [Lucide React](https://lucide.dev/)
+- **Şema Doğrulama:** [Zod](https://zod.dev/)
+- **Birim Testleri:** [Vitest](https://vitest.dev/)
+- **CI/CD & Dağıtım:** GitHub Actions + GitHub Pages
+
+---
+
+## 📂 Dizin Ağacı
+
+```text
+capitis-media-kit/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Pages otomatik derleme ve dağıtım
+├── docs/                       # Detaylı güncelleme ve yayınlama rehberleri
+├── public/
+│   ├── capitis-media-kit.pdf   # Orijinal 5 sayfalık 1.3MB medya kiti
+│   ├── favicon.ico             # 32x32 özel logo ikonu
+│   ├── icons/                  # PWA ve Apple touch ikonları
+│   └── images/                 # Vektörel logo ve sunum sayfası renderları
+├── src/
+│   ├── app/                    # Next.js rotaları (/privacy, /kvkk, /cookies, /terms)
+│   ├── components/
+│   │   ├── forms/              # Brief stüdyosu ve canlı hesaplayıcı
+│   │   ├── layout/             # Header, Footer
+│   │   ├── motion/             # Lenis akıcı kaydırma
+│   │   ├── sections/           # Hero, Bento, Kitle, Paketler, Vitrin vb.
+│   │   ├── three/              # 2040 Kinetik Kuantum Çekirdek (Three.js)
+│   │   └── ui/                 # Logo, Modal, Buton, Rozetler
+│   ├── config/                 # Merkezi tekil veri kaynakları (fiyat, metrik vb.)
+│   ├── lib/                    # Yardımcı araçlar, format ve doğrulama
+│   └── types/                  # TypeScript veri modelleri
+└── tests/                      # Vitest birim testleri (7 test)
+```
+
+---
+
+## 💻 Geliştirici Kurulumu
 
 ```bash
-# Bağımlılıkları yükleyin
+# Depoyu klonlayın
+git clone https://github.com/EroCores/capitis-media-kit.git
+cd capitis-media-kit
+
+# Bağımlılıkları kurun
 npm install
 
-# Geliştirme sunucusunu başlatın (http://localhost:3000)
+# Geliştirme sunucusunu çalıştırın (http://localhost:3000)
 npm run dev
 
 # TypeScript tip kontrolü
@@ -38,53 +153,23 @@ npm run typecheck
 # Birim testleri çalıştırın
 npm run test
 
-# Üretim için statik derleme (out/ klasörü üretir)
+# Statik export çıktısı üretin (out/ klasörü)
 npm run build
 ```
 
 ---
 
-## 📁 Proje Klasör Mimarisi
+## 📬 Resmi İletişim
 
-```text
-├── docs/                      # Güncelleme, yayınlama ve performans rehberleri
-├── public/                    # Statik medya ve ikonlar
-├── src/
-│   ├── app/                   # Next.js App Router sayfaları ve yasal rotalar
-│   │   ├── privacy/           # Gizlilik Politikası
-│   │   ├── kvkk/              # KVKK Aydınlatma Metni
-│   │   ├── cookies/           # Çerez Bilgilendirmesi
-│   │   ├── terms/             # Hizmet & İş Birliği Koşulları
-│   │   ├── globals.css        # Tasarım tokenları & cam efektleri
-│   │   └── page.tsx           # Ana landing page
-│   ├── components/            # Yeniden kullanılabilir modüler bileşenler
-│   │   ├── forms/             # Brief formu ve veri doğrulama
-│   │   ├── layout/            # Header, Footer
-│   │   ├── motion/            # Lenis akıcı kaydırma
-│   │   ├── sections/          # Hero, Bento, Kitle, Paketler, Süreç vb.
-│   │   ├── three/             # 3D Three.js Sahnesi
-│   │   └── ui/                # Buton, Rozet, Logo, Başlıklar
-│   ├── config/                # MERKEZİ VERİ YÖNETİMİ
-│   │   ├── site.ts            # Marka & İletişim bilgileri
-│   │   ├── metrics.ts         # Doğrulanmış TikTok Studio analitiği
-│   │   ├── packages.ts        # Paketler, fiyatlar ve ek hizmetler
-│   │   ├── services.ts        # İş birliği modelleri
-│   │   └── faq.ts             # Sıkça sorulan sorular
-│   ├── lib/                   # Yardımcı araçlar, format ve doğrulama
-│   └── types/                 # TypeScript veri modelleri
-└── tests/                     # Vitest birim testleri
-```
+- **İçerik Üreticisi:** CAPİTİS (@capitis.tr)
+- **TikTok:** [tiktok.com/@capitis.tr](https://www.tiktok.com/@capitis.tr)
+- **Instagram:** [instagram.com/capitis.tr](https://www.instagram.com/capitis.tr/)
+- **Kurumsal E-posta:** [iletisim.capitis@gmail.com](mailto:iletisim.capitis@gmail.com)
+- **WhatsApp & Telefon:** [+90 538 244 51 77](https://wa.me/905382445177)
+- **Canlı Web Sitesi:** [erocores.github.io/capitis-media-kit](https://erocores.github.io/capitis-media-kit/)
 
 ---
 
-## 📄 Dokümantasyon Bağlantıları
-
-- [İçerik ve Fiyat Güncelleme Rehberi](docs/CONTENT_UPDATE_GUIDE.md)
-- [Yayınlama ve Dağıtım Rehberi](docs/DEPLOYMENT.md)
-- [Performans Raporu](docs/PERFORMANCE.md)
-
----
-
-## ⚖️ Lisans & Telif
-
-© 2026 CAPİTİS. Tüm hakları saklıdır.
+<div align="center">
+<sub>© 2026 CAPİTİS. Tüm hakları saklıdır. Bu proje <a href="https://github.com/EroCores">EroCores</a> tarafından gururla geliştirilmiştir.</sub>
+</div>

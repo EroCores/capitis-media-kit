@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { Menu, X, ArrowUpRight, Sparkles, Download } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "İstatistikler", href: "#istatistikler" },
@@ -92,8 +93,8 @@ export const Header: React.FC = () => {
           {/* Desktop CTA */}
           <div className="hidden sm:flex items-center gap-2.5">
             <a
-              href="/capitis-media-kit.pdf"
-              download="CAPITIS-Creator-Media-Kit.pdf"
+              href={getAssetPath("/capitis-media-kit.pdf")}
+              download="CAPITIS-Is-Birligi-Paketleri-Media-Kit.pdf"
               className="px-3 py-1.5 rounded-xl border border-white/[0.08] hover:border-amber-400/50 text-xs font-mono text-neutral-300 hover:text-white transition-all flex items-center gap-1.5 bg-neutral-900/50"
               title="Medya Kitini PDF İndir"
             >
@@ -160,8 +161,8 @@ export const Header: React.FC = () => {
 
           <div className="mt-6 pt-5 border-t border-neutral-800 flex flex-col gap-2.5">
             <a
-              href="/capitis-media-kit.pdf"
-              download="CAPITIS-Creator-Media-Kit.pdf"
+              href={getAssetPath("/capitis-media-kit.pdf")}
+              download="CAPITIS-Is-Birligi-Paketleri-Media-Kit.pdf"
               className="w-full py-3 px-4 rounded-xl border border-neutral-700 bg-neutral-900 text-sm font-medium text-center text-white flex items-center justify-center gap-2"
             >
               <Download className="w-4 h-4 text-amber-400" />

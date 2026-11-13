@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/config/site";
 import { Mail, MessageCircle, ArrowUpRight, Download } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 export const Footer: React.FC = () => {
   return (
@@ -85,8 +86,8 @@ export const Footer: React.FC = () => {
             <ul className="space-y-1.5 text-xs">
               <li>
                 <a
-                  href="/capitis-media-kit.pdf"
-                  download="CAPITIS-Creator-Media-Kit.pdf"
+                  href={getAssetPath("/capitis-media-kit.pdf")}
+                  download="CAPITIS-Is-Birligi-Paketleri-Media-Kit.pdf"
                   className="text-amber-400 hover:text-amber-300 flex items-center gap-1 font-medium"
                 >
                   <Download className="w-3.5 h-3.5" />
