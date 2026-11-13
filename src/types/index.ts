@@ -72,7 +72,7 @@ export interface AudienceMetrics {
 }
 
 export interface CollaborationPackage {
-  id: "mini" | "starter" | "advantage" | "custom";
+  id: "mini" | "starter" | "advantage" | "vip_growth" | "enterprise_custom";
   name: string;
   subtitle: string;
   price: number | null;
@@ -81,6 +81,7 @@ export interface CollaborationPackage {
   savingsBadge?: string;
   featured: boolean;
   featuredTag?: string;
+  videoCount: number;
   deliverables: string[];
   guarantees: string[];
   turnaroundDays: number;
@@ -93,7 +94,9 @@ export interface AddonService {
   id: string;
   title: string;
   description: string;
+  price: number | null;
   pricingNote: string;
+  badge?: string;
 }
 
 export interface CollaborationService {
@@ -129,10 +132,12 @@ export interface BriefFormData {
   email: string;
   phone: string;
   selectedPackage: string;
+  selectedAddons: string[];
   selectedPlatform: string[];
   campaignGoal: string;
   budgetRange: string;
   targetDate?: string;
   notes?: string;
+  calculatedTotal?: number;
   termsAccepted: boolean;
 }

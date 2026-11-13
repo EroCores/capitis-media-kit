@@ -18,23 +18,30 @@ export const briefFormSchema = z.object({
     .max(20, "Telefon numarası çok uzun."),
   selectedPackage: z
     .string()
-    .min(1, "Lütfen ilgilendiğiniz bir paket seçiniz."),
+    .min(1, "Lütfen bir paket seçiniz."),
+  selectedAddons: z
+    .array(z.string())
+    .default([]),
   selectedPlatform: z
     .array(z.string())
     .min(1, "En az bir platform seçmelisiniz."),
   campaignGoal: z
     .string()
-    .min(5, "Lütfen içerik veya kampanya amacınızı kısaca belirtiniz.")
-    .max(1000, "Hedef açıklaması çok uzun."),
+    .min(5, "Lütfen kampanya hedefinizi kısaca belirtiniz.")
+    .max(1000, "Açıklama çok uzun."),
   budgetRange: z
     .string()
-    .default("Belirtilmedi"),
+    .default("Hesaplanan Toplam Yatırım"),
   targetDate: z
     .string()
     .optional(),
   notes: z
     .string()
     .max(2000, "Notlar 2000 karakterden az olmalıdır.")
+    .optional(),
+  calculatedTotal: z
+    .number()
+    .nullable()
     .optional(),
   termsAccepted: z
     .boolean()

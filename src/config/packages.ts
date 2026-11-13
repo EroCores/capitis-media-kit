@@ -10,6 +10,7 @@ export const collaborationPackages: CollaborationPackage[] = [
     pricePerVideo: "₺350 / video",
     savingsBadge: undefined,
     featured: false,
+    videoCount: 1,
     deliverables: [
       "1 TikTok tanıtım videosu",
       "Markaya özel özgün kurgu",
@@ -37,6 +38,7 @@ export const collaborationPackages: CollaborationPackage[] = [
     savingsBadge: "%7 Tasarruf",
     featured: true,
     featuredTag: "EN POPÜLER",
+    videoCount: 2,
     deliverables: [
       "2 TikTok tanıtım videosu",
       "2 farklı içerik senaryosu & kurgusu",
@@ -63,6 +65,7 @@ export const collaborationPackages: CollaborationPackage[] = [
     pricePerVideo: "₺300 / video",
     savingsBadge: "%14 Tasarruf",
     featured: false,
+    videoCount: 3,
     deliverables: [
       "3 TikTok tanıtım videosu",
       "3 farklı içerik kurgusu & senaryo",
@@ -81,6 +84,62 @@ export const collaborationPackages: CollaborationPackage[] = [
     suitableFor: "Kalıcı marka bilinirliği ve seri anlatım gücünden faydalanmak isteyen vizyoner markalar.",
     ctaText: "Avantajlı Paketi Seç",
   },
+  {
+    id: "vip_growth",
+    name: "VIP Büyüme & Dönüşüm Serisi",
+    subtitle: "5 videoluk derinlemesine seri · Spark Ads lisansı ve öncelikli prodüksiyon",
+    price: 1650,
+    currency: "TRY",
+    pricePerVideo: "₺330 / video (Lisans Dahil)",
+    savingsBadge: "MAKSİMUM ETKİ",
+    featured: false,
+    featuredTag: "LÜKS & KAPSAMLI",
+    videoCount: 5,
+    deliverables: [
+      "5 TikTok tanıtım videosu (Tematik seri kurgusu)",
+      "30 Günlük Spark Ads reklam yetkilendirme kodu DAHİL",
+      "Instagram Story ve Reels duyuru desteği",
+      "Capitis hesabında öne çıkan kalıcı vitrin",
+      "Farklı kanca (hook) ve senaryo stratejisi",
+    ],
+    guarantees: [
+      "Öncelikli prodüksiyon sırası (5-6 gün)",
+      "2 kez revizyon hakkı",
+      "1-e-1 Özel strateji ve kurgu toplantısı",
+    ],
+    turnaroundDays: 6,
+    revisions: 2,
+    suitableFor: "Büyük kampanya veya ürün lansmanlarında pazar payını hızla artırmak isteyen lider markalar.",
+    ctaText: "VIP Seriyi Seç",
+  },
+  {
+    id: "enterprise_custom",
+    name: "360° Marka Yüzü & Kurumsal UGC",
+    subtitle: "Aylık düzenli içerik ortaklığı · Kendi reklamlarınız için tam ticari hak",
+    price: null,
+    currency: "TRY",
+    pricePerVideo: "Özel Fiyatlandırma",
+    savingsBadge: "ÖZEL ÇÖZÜM",
+    featured: false,
+    featuredTag: "KURUMSAL ORTAKLIK",
+    videoCount: 8,
+    deliverables: [
+      "Aylık 8+ Video (TikTok + Instagram + UGC)",
+      "Markanızın kendi Meta / TikTok reklam hesaplarında sınırsız kullanım hakkı",
+      "4K Ham Çekim (Raw Footage) ve dikey kurgu teslimi",
+      "Marka elçisi ve uzun vadeli ortaklık modeli",
+      "Haftalık performans analizi ve kurgu revizyonları",
+    ],
+    guarantees: [
+      "Özel SLA ve dedike prodüksiyon takvimi",
+      "Sınırsız senaryo varyasyonu ve A/B kancaları",
+      "Doğrudan WhatsApp VIP iletişim hattı",
+    ],
+    turnaroundDays: 14,
+    revisions: 3,
+    suitableFor: "Düzenli olarak yüksek kaliteli içerikle reklam bütçesini optimize etmek isteyen e-ticaret ve teknoloji şirketleri.",
+    ctaText: "Özel Teklif Al",
+  },
 ];
 
 export const collaborationAddons: AddonService[] = [
@@ -89,34 +148,42 @@ export const collaborationAddons: AddonService[] = [
     title: "Ücretli Reklam (Spark Ads / Whitelist) Lisansı",
     description:
       "Videonun TikTok Ads Manager üzerinde marka tarafından reklam olarak öne çıkarılması için 30 günlük yetkilendirme kodu.",
-    pricingNote: "Teklif ile belirlenir",
+    price: 400,
+    pricingNote: "+₺400",
+    badge: "Popüler",
   },
   {
     id: "fast_delivery",
     title: "Ekspres Teslimat (48–72 Saat)",
     description:
       "Zaman kısıtı olan acil lansman ve duyurularınız için hızlandırılmış prodüksiyon ve teslim takvimi.",
-    pricingNote: "Paket tutarının +%30'u",
-  },
-  {
-    id: "extra_revision",
-    title: "Ek Revizyon Turu",
-    description:
-      "Paket kapsamındaki 1 standart revizyona ek olarak talep edilen ekstra kurgu/metin düzenleme hakkı.",
-    pricingNote: "₺150 / tur",
+    price: 250,
+    pricingNote: "+₺250",
+    badge: "Hızlı",
   },
   {
     id: "raw_footage",
-    title: "Ham Görüntü (Raw Footage) Teslimi",
+    title: "4K Ham Görüntü (Raw Footage) Teslimi",
     description:
       "Çekilen dikey 4K ham videoların markanın kendi iç arşivinde ve kreatif ekiplerinde kullanılmak üzere teslimi.",
-    pricingNote: "₺250 / video",
+    price: 300,
+    pricingNote: "+₺300",
   },
   {
     id: "instagram_crosspost",
     title: "Instagram Reels & Story Desteği",
     description:
       "TikTok içeriğinin Instagram @capitis.tr hesabında Reels formatında çapraz paylaşımı ve 24 saatlik Story duyurusu.",
-    pricingNote: "Özel teklif ile",
+    price: 350,
+    pricingNote: "+₺350",
+    badge: "Çok Kanallı",
+  },
+  {
+    id: "extra_hooks",
+    title: "3 Farklı Alternatif Kanca (Hook) Varyasyonu",
+    description:
+      "Videonun ilk 3 saniyesini test etmek için farklı kanca girişleri çekilip teslim edilir.",
+    price: 200,
+    pricingNote: "+₺200",
   },
 ];

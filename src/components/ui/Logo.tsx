@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface LogoProps {
   className?: string;
@@ -13,9 +14,15 @@ export const Logo: React.FC<LogoProps> = ({
   size = "md",
 }) => {
   const iconDimensions = {
-    sm: "w-7 h-7",
-    md: "w-9 h-9",
-    lg: "w-12 h-12",
+    sm: "w-8 h-8",
+    md: "w-10 h-10",
+    lg: "w-14 h-14",
+  }[size];
+
+  const imageSize = {
+    sm: 32,
+    md: 40,
+    lg: 56,
   }[size];
 
   const textSize = {
@@ -28,43 +35,20 @@ export const Logo: React.FC<LogoProps> = ({
     <Link
       href="/"
       aria-label="CAPİTİS Ana Sayfa"
-      className={`inline-flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-lg p-1 ${className}`}
+      className={`inline-flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-xl p-1 ${className}`}
     >
-      {/* Özgün Geometrik Satranç / Strateji Taşı İkonu */}
+      {/* Resmi Capitis Büyüme & Trend Logosu */}
       <div
-        className={`relative ${iconDimensions} rounded-xl bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-[1px] shadow-lg shadow-black/40 border border-neutral-700/50 group-hover:border-amber-400/60 transition-colors duration-300 flex items-center justify-center`}
+        className={`relative ${iconDimensions} rounded-xl bg-gradient-to-br from-neutral-900 via-black to-neutral-950 p-1.5 shadow-xl shadow-black/60 border border-neutral-700/60 group-hover:border-amber-400/80 transition-all duration-300 flex items-center justify-center overflow-hidden`}
       >
-        <svg
-          viewBox="0 0 36 36"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full p-1.5"
-          aria-hidden="true"
-        >
-          {/* Stratejik Geometrik At / Şah Sentezi */}
-          <path
-            d="M18 5L24 10L22 14L27 18L21 21L23 27L18 29L13 27L15 21L9 18L14 14L12 10L18 5Z"
-            stroke="url(#goldGradient)"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="transition-all duration-300 group-hover:scale-105"
-          />
-          <path
-            d="M18 12V24"
-            stroke="url(#goldGradient)"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <circle cx="18" cy="18" r="2.5" fill="#E5B869" />
-          <defs>
-            <linearGradient id="goldGradient" x1="9" y1="5" x2="27" y2="29" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#F5F4EF" />
-              <stop offset="0.5" stopColor="#E5B869" />
-              <stop offset="1" stopColor="#9C7733" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <div className="absolute inset-0 bg-amber-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <Image
+          src="/images/capitis-logo.png"
+          alt="CAPİTİS Logo"
+          width={imageSize}
+          height={imageSize}
+          className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] group-hover:drop-shadow-[0_0_12px_rgba(229,184,105,0.6)] transition-all duration-300 group-hover:scale-105"
+        />
       </div>
 
       {showText && (
@@ -72,7 +56,7 @@ export const Logo: React.FC<LogoProps> = ({
           <span className={`font-black uppercase text-white font-mono leading-none ${textSize}`}>
             CAPİTİS
           </span>
-          <span className="text-[9px] uppercase tracking-[0.25em] text-neutral-400 font-medium">
+          <span className="text-[9px] uppercase tracking-[0.28em] text-neutral-400 font-medium mt-0.5">
             CREATOR MEDIA KIT
           </span>
         </div>
