@@ -1,13 +1,6 @@
 <div align="center">
 
-```
-  ██████╗ █████╗ ██████╗ ██╗████████╗██╗███████╗
- ██╔════╝██╔══██╗██╔══██╗██║╚══██╔══╝██║██╔════╝
- ██║     ███████║██████╔╝██║   ██║   ██║███████╗
- ██║     ██╔══██║██╔═══╝ ██║   ██║   ██║╚════██║
- ╚██████╗██║  ██║██║     ██║   ██║   ██║███████║
-  ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝   ╚═╝╚══════╝
-```
+<img src="https://raw.githubusercontent.com/EroCores/capitis-media-kit/main/public/images/capitis-logo.png" alt="CAPİTİS Logo" width="130" style="filter: drop-shadow(0 0 16px rgba(212, 168, 67, 0.6)); margin-bottom: 12px;" />
 
 # 👑 CAPİTİS — Creator Media Kit & Collaboration Platform
 ### *“Zihin setini sıradanlıktan kurtar. Hayatını yeniden inşa et.”*
@@ -22,7 +15,7 @@
 
 <br/>
 
-**[🚀 CANLI DEMOYU İNCELE](https://erocores.github.io/capitis-media-kit/)** &nbsp;•&nbsp; **[📄 MEDYA KİTİ (PDF)](https://erocores.github.io/capitis-media-kit/capitis-media-kit.pdf)** &nbsp;•&nbsp; **[💬 WHATSAPP TEKLİF](https://wa.me/905382445177)**
+**[🚀 CANLI SİTEYİ İNCELE](https://erocores.github.io/capitis-media-kit/)** &nbsp;•&nbsp; **[📄 MEDYA KİTİ (PDF)](https://erocores.github.io/capitis-media-kit/capitis-media-kit.pdf)** &nbsp;•&nbsp; **[✉️ RESMİ E-POSTA](mailto:iletisim.capitis@gmail.com)**
 
 ---
 
@@ -51,11 +44,11 @@
 - 5 farklı iş birliği paketi seçimi.
 - Modüler ek hizmetler (Spark Ads Lisansı, 48-72s Ekspres Teslimat, 4K Ham Çekim, Instagram Reels/Story, 3 Alternatif Kanca).
 - Seçimlere göre anlık olarak güncellenen **"Tahmini Toplam Yatırım"** ve **"Teslimat Süresi"** hesaplama motoru.
-- Tek tıkla **WhatsApp** veya **E-posta İstemcisi** ile brief iletimi.
+- Tek tıkla **Resmi E-posta İstemcisi** ile brief iletimi veya pano kopyalama.
 
 ### 📑 4. Entegre 5 Sayfalık Medya Kiti Görüntüleyici & PDF İndirme
 - Sitenin içinden çıkmadan yüksek çözünürlükte slayt olarak incelenebilen interaktif modal.
-- Tek tıkla orijinal 5 sayfalık vektörel PDF dosyasını cihaza indirme.
+- Tek tıkla orijinal 5 sayfalık yüksek kaliteli PDF dosyasını cihaza indirme.
 
 ---
 
@@ -165,7 +158,6 @@ npm run build
 - **TikTok:** [tiktok.com/@capitis.tr](https://www.tiktok.com/@capitis.tr)
 - **Instagram:** [instagram.com/capitis.tr](https://www.instagram.com/capitis.tr/)
 - **Kurumsal E-posta:** [iletisim.capitis@gmail.com](mailto:iletisim.capitis@gmail.com)
-- **WhatsApp & Telefon:** [+90 538 244 51 77](https://wa.me/905382445177)
 - **Canlı Web Sitesi:** [erocores.github.io/capitis-media-kit](https://erocores.github.io/capitis-media-kit/)
 
 ---

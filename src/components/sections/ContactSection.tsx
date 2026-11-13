@@ -4,7 +4,7 @@ import React from "react";
 import { siteConfig } from "@/config/site";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { BriefForm } from "@/components/forms/BriefForm";
-import { Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight, Sparkles } from "lucide-react";
 
 interface ContactSectionProps {
   selectedPackage?: string;
@@ -17,59 +17,80 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedPackage 
         <SectionHeader
           eyebrow="HADİ BAŞLAYALIM"
           title="Markanızı Birlikte Büyütelim"
-          subtitle="Brief formunu doldurarak veya doğrudan WhatsApp üzerinden bize ulaşın. Aynı gün içinde dönüş yapıyoruz."
+          subtitle="Brief formunu doldurarak veya doğrudan kurumsal e-posta adresimiz üzerinden bize ulaşabilirsiniz."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-          {/* Sol Kolon: Hızlı İletişim (4 Kolon) */}
+          {/* Sol Kolon: Doğrudan İletişim & Sosyal Kanallar (4 Kolon) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="glass-panel p-5 sm:p-6 rounded-2xl">
               <h3 className="text-base sm:text-lg font-bold text-white mb-1.5">
-                Hızlı İletişim Kanalları
+                Resmi İletişim Kanalı
               </h3>
               <p className="text-xs text-neutral-400 mb-5 leading-relaxed">
-                Doğrudan keşif görüşmesi planlamak veya soru sormak için dilediğiniz kanalı kullanabilirsiniz.
+                Teklif, sponsorluk ve özel proje talepleriniz için resmi e-posta adresimiz üzerinden iletişime geçebilirsiniz.
               </p>
 
-              <div className="space-y-2.5">
+              <div className="space-y-3">
                 {/* E-posta Kartı */}
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 hover:border-amber-400/40 hover:bg-neutral-800/60 transition-all group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-neutral-900/90 border border-neutral-800 hover:border-amber-400/50 hover:bg-neutral-800/60 transition-all group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-amber-400/10 flex items-center justify-center text-amber-400">
-                      <Mail className="w-4 h-4" />
+                    <div className="w-10 h-10 rounded-lg bg-amber-400/10 flex items-center justify-center text-amber-400">
+                      <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] text-neutral-500 font-mono block">E-POSTA</span>
-                      <span className="text-xs font-semibold text-white group-hover:text-amber-300">
+                      <span className="text-[10px] text-neutral-500 font-mono block">RESMİ E-POSTA</span>
+                      <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-amber-300">
                         {siteConfig.contact.email}
                       </span>
                     </div>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-amber-400 transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-amber-400 transition-colors" />
                 </a>
 
-                {/* WhatsApp Kartı */}
+                {/* TikTok Kanalı */}
                 <a
-                  href={siteConfig.contact.whatsappUrl}
+                  href={siteConfig.tiktok.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 hover:border-emerald-500/40 hover:bg-neutral-800/60 transition-all group"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 hover:border-white/30 hover:bg-neutral-800/40 transition-all group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-                      <MessageCircle className="w-4 h-4" />
+                    <div className="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center text-white">
+                      <Sparkles className="w-4 h-4 text-amber-400" />
                     </div>
                     <div>
-                      <span className="text-[10px] text-neutral-500 font-mono block">WHATSAPP</span>
-                      <span className="text-xs font-semibold text-white group-hover:text-emerald-300">
-                        {siteConfig.contact.phoneFormatted}
+                      <span className="text-[10px] text-neutral-500 font-mono block">TIKTOK PROFİLİ</span>
+                      <span className="text-xs font-semibold text-white group-hover:text-amber-300">
+                        {siteConfig.tiktok.handle}
                       </span>
                     </div>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-emerald-400 transition-colors" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white transition-colors" />
+                </a>
+
+                {/* Instagram Kanalı */}
+                <a
+                  href={siteConfig.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 hover:border-white/30 hover:bg-neutral-800/40 transition-all group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center text-white">
+                      <Sparkles className="w-4 h-4 text-purple-400" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-neutral-500 font-mono block">INSTAGRAM PROFİLİ</span>
+                      <span className="text-xs font-semibold text-white group-hover:text-purple-300">
+                        {siteConfig.instagram.handle}
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white transition-colors" />
                 </a>
               </div>
             </div>
@@ -78,11 +99,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedPackage 
             <div className="glass-panel p-5 rounded-2xl text-xs space-y-2 text-neutral-400 font-mono">
               <div className="flex justify-between">
                 <span>Yanıt Süresi:</span>
-                <span className="text-white font-semibold">2–4 Saat</span>
+                <span className="text-white font-semibold">2–4 Saat İçinde</span>
               </div>
               <div className="flex justify-between">
                 <span>Çalışma Günleri:</span>
-                <span className="text-white font-semibold">Pzt – Cmt</span>
+                <span className="text-white font-semibold">Pazartesi – Cumartesi</span>
               </div>
               <div className="flex justify-between">
                 <span>Saat Dilimi:</span>

@@ -39,7 +39,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-lg font-bold text-white">1. Hangi Bilgileri Topluyoruz?</h2>
             <p>
-              Web sitemiz sunucu tarafında veri tabanı barındırmayan statik bir vitrin sitesidir. Doğrudan tarayıcınız üzerinden sunucuya gizli bir veri kaydı yapılmaz. Yalnızca iş birliği talebinde bulunurken sizin gönüllü olarak doldurduğunuz (Marka Adı, Yetkili Kişi, E-posta, Telefon, Kampanya Notları) bilgiler, sizin onayınızla cihazınızdaki e-posta istemcisi veya WhatsApp uygulaması üzerinden bize aktarılır.
+              Web sitemiz sunucu tarafında veri tabanı barındırmayan statik bir vitrin sitesidir. Doğrudan tarayıcınız üzerinden sunucuya gizli bir veri kaydı yapılmaz. Yalnızca iş birliği talebinde bulunurken sizin gönüllü olarak doldurduğunuz (Marka Adı, Yetkili Kişi, Kurumsal E-posta, Kampanya Notları) bilgiler, sizin onayınızla cihazınızdaki varsayılan e-posta istemcisi üzerinden doğrudan resmi e-posta adresimize aktarılır.
             </p>
 
             <h2 className="text-lg font-bold text-white">2. Bilgilerin Kullanım Amacı</h2>

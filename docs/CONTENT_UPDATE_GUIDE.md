@@ -37,10 +37,9 @@ Tüm içerik yönetimi `src/config/` klasörü altındaki dosyalardan yapılır.
 
 ---
 
-## 4. İletişim Bilgilerini (E-posta, WhatsApp, Telefon) Değiştirmek
+## 4. İletişim Bilgilerini Değiştirmek
 **Dosya:** `src/config/site.ts`
 
-- `siteConfig.contact.email`: Yeni e-posta adresi.
-- `siteConfig.contact.phone`: Yeni telefon numarası.
-- `siteConfig.contact.whatsappUrl`: WhatsApp yönlendirme bağlantısı (`https://wa.me/90...`).
-- Sosyal medya hesap kullanıcı adları ve URL'leri de bu dosyadan yönetilir.
+- `siteConfig.contact.email`: Resmi kurumsal e-posta adresi (`iletisim.capitis@gmail.com`).
+- Sosyal medya hesap kullanıcı adları ve URL'leri (`tiktok`, `instagram`) de bu dosyadan yönetilir.
+- Tüm teklif akışı doğrudan resmi e-posta ve brief stüdyosu üzerinden yürütülmektedir. Telefon numarası ve WhatsApp güvenlik ve gizlilik gereği genel sitede yayınlanmaz.

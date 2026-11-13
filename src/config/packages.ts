@@ -133,7 +133,7 @@ export const collaborationPackages: CollaborationPackage[] = [
     guarantees: [
       "Özel SLA ve dedike prodüksiyon takvimi",
       "Sınırsız senaryo varyasyonu ve A/B kancaları",
-      "Doğrudan WhatsApp VIP iletişim hattı",
+      "Öncelikli Doğrudan VIP İletişim Hattı",
     ],
     turnaroundDays: 14,
     revisions: 3,

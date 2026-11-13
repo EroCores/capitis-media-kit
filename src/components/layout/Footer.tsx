@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/config/site";
-import { Mail, MessageCircle, ArrowUpRight, Download } from "lucide-react";
+import { Mail, ArrowUpRight, Download } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
 export const Footer: React.FC = () => {
@@ -120,7 +120,7 @@ export const Footer: React.FC = () => {
           {/* Kolon 5: Doğrudan İletişim */}
           <div>
             <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-3">
-              İLETİŞİM
+              RESMİ İLETİŞİM
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
@@ -132,16 +132,8 @@ export const Footer: React.FC = () => {
                   <span>{siteConfig.contact.email}</span>
                 </a>
               </li>
-              <li>
-                <a
-                  href={siteConfig.contact.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors"
-                >
-                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>{siteConfig.contact.phoneFormatted}</span>
-                </a>
+              <li className="text-[11px] text-neutral-500 pt-1">
+                İş birliği brieflerinizi e-posta veya web formu üzerinden iletebilirsiniz.
               </li>
             </ul>
           </div>

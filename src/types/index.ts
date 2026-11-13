@@ -15,9 +15,6 @@ export interface SiteConfig {
   };
   contact: {
     email: string;
-    phone: string;
-    phoneFormatted: string;
-    whatsappUrl: string;
   };
   copyright: string;
 }
@@ -130,7 +127,7 @@ export interface BriefFormData {
   brandName: string;
   contactName: string;
   email: string;
-  phone: string;
+  phone?: string;
   selectedPackage: string;
   selectedAddons: string[];
   selectedPlatform: string[];

@@ -5,7 +5,7 @@ export const processSteps: ProcessStep[] = [
     step: "01",
     title: "Keşif & Brief Alımı",
     description: "Markanızın hedeflerini, hedef kitlesini ve öne çıkarmak istediğiniz temel değerleri dinliyoruz.",
-    detail: "Form veya WhatsApp üzerinden gelen brief incelenir, marka diline en uygun yaklaşım belirlenir.",
+    detail: "Form veya E-posta üzerinden gelen brief incelenir, marka diline en uygun yaklaşım belirlenir.",
   },
   {
     step: "02",

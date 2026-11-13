@@ -47,7 +47,7 @@ class DarkNumberedCanvas(canvas.Canvas):
         self.drawString(40, A4[1] - 28, 'CAPİTİS — CREATOR MEDIA KIT & İŞ BİRLİĞİ REHBERİ')
         self.drawRightString(A4[0] - 40, A4[1] - 28, 'RESMİ DOKÜMAN')
         
-        self.drawString(40, 22, 'TikTok: @capitis.tr  |  iletisim.capitis@gmail.com  |  +90 538 244 51 77')
+        self.drawString(40, 22, 'TikTok: @capitis.tr  |  iletisim.capitis@gmail.com  |  ')
         self.drawRightString(A4[0] - 40, 22, f'Sayfa {self._pageNumber} / {page_count}')
         self.restoreState()
 
@@ -241,7 +241,7 @@ story.append(Spacer(1, 8))
 story.append(Paragraph('4. İLETİŞİM VE ANINDA BRİEF İLETİMİ', h1_style))
 contact_info = Paragraph(
     'Tüm iş birliklerinde <b>%50 Başlangıç + %50 Teslimat</b> güvencesi ve 7 gün teslim standardı uygulanır.<br/>'
-    '<b>E-posta:</b> iletisim.capitis@gmail.com  |  <b>WhatsApp & Telefon:</b> +90 538 244 51 77<br/>'
+    '<b>E-posta:</b> iletisim.capitis@gmail.com  |  <b>İletişim:</b> <br/>'
     '<b>TikTok:</b> tiktok.com/@capitis.tr  |  <b>Web:</b> capitis.tr',
     body_style
 )

@@ -17,9 +17,6 @@ export const siteConfig: SiteConfig = {
   },
   contact: {
     email: "iletisim.capitis@gmail.com",
-    phone: "+90 538 244 51 77",
-    phoneFormatted: "+90 (538) 244 51 77",
-    whatsappUrl: "https://wa.me/905382445177",
   },
   copyright: "© 2026 CAPİTİS. Tüm hakları saklıdır.",
 };

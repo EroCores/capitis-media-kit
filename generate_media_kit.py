@@ -97,7 +97,7 @@ class MediaKitPDF(FPDF):
         contacts = [
             ("TikTok", "@capitis.tr"),
             ("E-posta", "iletisim.capitis@gmail.com"),
-            ("WhatsApp", "+90 538 244 51 77"),
+            ("E-posta", ""),
         ]
         y_start = 188
         for i, (label, value) in enumerate(contacts):
@@ -405,7 +405,7 @@ class MediaKitPDF(FPDF):
 
         contacts = [
             ("E-posta", "iletisim.capitis@gmail.com"),
-            ("WhatsApp", "+90 538 244 51 77"),
+            ("E-posta", ""),
             ("TikTok", "@capitis.tr"),
             ("Instagram", "@capitis.tr"),
         ]

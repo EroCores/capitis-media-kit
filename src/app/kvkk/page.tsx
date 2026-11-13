@@ -40,8 +40,7 @@ export default function KvkkPage() {
             <h2 className="text-lg font-bold text-white">1. Veri Sorumlusunun Kimliği</h2>
             <p>
               Veri Sorumlusu: CAPİTİS Creator Temsilciliği<br />
-              İletişim E-posta: {siteConfig.contact.email}<br />
-              İletişim Tel / WhatsApp: {siteConfig.contact.phoneFormatted}
+              İletişim E-posta: {siteConfig.contact.email}
             </p>
 
             <h2 className="text-lg font-bold text-white">2. Kişisel Verilerin İşlenme Amaçları</h2>

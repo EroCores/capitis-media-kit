@@ -11,11 +11,11 @@ export const briefFormSchema = z.object({
     .max(100, "İsim çok uzun."),
   email: z
     .string()
-    .email("Geçerli bir e-posta adresi giriniz."),
+    .email("Geçerli bir kurumsal e-posta adresi giriniz."),
   phone: z
     .string()
-    .min(10, "Geçerli bir telefon numarası giriniz (örn: 05xx xxx xx xx).")
-    .max(20, "Telefon numarası çok uzun."),
+    .max(25, "Telefon numarası çok uzun.")
+    .optional(),
   selectedPackage: z
     .string()
     .min(1, "Lütfen bir paket seçiniz."),

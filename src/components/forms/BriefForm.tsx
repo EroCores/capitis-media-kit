@@ -2,23 +2,18 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import { collaborationPackages, collaborationAddons } from "@/config/packages";
-import { siteConfig } from "@/config/site";
 import { briefFormSchema, BriefFormValues } from "@/lib/validation";
-import { generateMailtoUrl, generateWhatsAppUrl, formatFormSummaryText } from "@/lib/contact";
+import { generateMailtoUrl, formatFormSummaryText } from "@/lib/contact";
 import { formatCurrency } from "@/lib/format";
 import { Button } from "@/components/ui/Button";
 import {
   Mail,
-  MessageCircle,
   Copy,
   Check,
-  Sparkles,
   Layers,
   Clock,
   ShieldCheck,
-  CheckCircle2,
   Plus,
-  Zap,
 } from "lucide-react";
 
 interface BriefFormProps {
@@ -51,12 +46,10 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
     }
   }, [initialPackage]);
 
-  // Seçilen paket nesnesi
   const currentPackage = useMemo(() => {
     return collaborationPackages.find((p) => p.id === selectedPackageId) || collaborationPackages[1];
   }, [selectedPackageId]);
 
-  // Canlı Fiyat Hesaplaması
   const calculatedTotal = useMemo(() => {
     if (currentPackage.price === null) return null;
     let total = currentPackage.price;
@@ -69,7 +62,6 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
     return total;
   }, [currentPackage, selectedAddonIds]);
 
-  // Teslimat Süresi Hesaplaması (Ekspres seçilirse 48-72 saate iner)
   const estimatedTurnaround = useMemo(() => {
     if (selectedAddonIds.includes("fast_delivery")) {
       return "48–72 Saat (Ekspres)";
@@ -125,13 +117,6 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
     window.location.href = mailto;
   };
 
-  const handleSendWhatsApp = () => {
-    if (!validate()) return;
-    const fullData = getFullFormData();
-    const waUrl = generateWhatsAppUrl(fullData);
-    window.open(waUrl, "_blank", "noopener,noreferrer");
-  };
-
   const handleCopyClipboard = async () => {
     if (!validate()) return;
     const fullData = getFullFormData();
@@ -141,7 +126,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      alert("Pano kopyalama desteklenmiyor, lütfen e-posta veya WhatsApp seçeneğini kullanın.");
+      alert("Pano kopyalama desteklenmiyor, lütfen e-posta seçeneğini kullanın.");
     }
   };
 
@@ -160,7 +145,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
             İş Birliğinizi Yapılandırın
           </h3>
           <p className="text-xs sm:text-sm text-neutral-400 mt-1">
-            Paketinizi seçin, ek hizmetleri dahil edin ve canlı bütçe hesabıyla teklifinizi anında iletin.
+            Paketinizi seçin, ek hizmetleri dahil edin ve canlı bütçe hesabıyla teklifinizi resmi e-posta üzerinden iletin.
           </p>
         </div>
 
@@ -294,7 +279,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
           </div>
         </div>
 
-        {/* CANLI HESAPLAYICI ÖZET KARTI (Tesla / Apple Studio Tarzı) */}
+        {/* CANLI HESAPLAYICI ÖZET KARTI */}
         <div className="p-5 rounded-2xl bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border border-amber-400/30 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-amber-400 block">
@@ -413,24 +398,19 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
 
               <div>
                 <label htmlFor="phone" className="block text-xs font-semibold text-neutral-300 mb-1.5">
-                  Telefon Numarası / WhatsApp *
+                  İletişim Numaranız (İsteğe Bağlı)
                 </label>
                 <input
                   id="phone"
                   type="tel"
-                  placeholder="0532 000 00 00"
+                  placeholder="Örn: 05xx xxx xx xx"
                   value={formData.phone}
                   onChange={(e) => {
                     setFormData({ ...formData, phone: e.target.value });
                     if (errors.phone) setErrors({ ...errors, phone: undefined });
                   }}
-                  className={`w-full px-4 py-3 rounded-xl bg-neutral-950/80 border text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400/80 transition-all ${
-                    submittedAttempt && errors.phone ? "border-red-500/80" : "border-neutral-800"
-                  }`}
+                  className="w-full px-4 py-3 rounded-xl bg-neutral-950/80 border border-neutral-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400/80"
                 />
-                {submittedAttempt && errors.phone && (
-                  <p className="mt-1 text-xs text-red-400">{errors.phone}</p>
-                )}
               </div>
             </div>
 
@@ -546,25 +526,14 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
           )}
         </div>
 
-        {/* Gönderim Butonları (App Action Bar) */}
+        {/* Gönderim Butonları (Resmi E-posta Odaklı) */}
         <div className="pt-4 border-t border-neutral-800/80 flex flex-col sm:flex-row gap-3">
-          <Button
-            type="button"
-            size="lg"
-            variant="primary"
-            className="flex-1 justify-center py-4 text-base bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 shadow-xl shadow-amber-500/25"
-            onClick={handleSendWhatsApp}
-            leftIcon={<MessageCircle className="w-5 h-5 text-black" />}
-          >
-            WhatsApp ile Teklifi Başlat
-          </Button>
-
           <Button
             type="submit"
             size="lg"
-            variant="secondary"
-            className="flex-1 justify-center py-4 text-base"
-            leftIcon={<Mail className="w-4 h-4 text-amber-400" />}
+            variant="primary"
+            className="flex-1 justify-center py-4 text-base btn-aurora"
+            leftIcon={<Mail className="w-5 h-5 text-black" />}
           >
             E-posta İstemcisiyle Gönder
           </Button>
@@ -573,7 +542,7 @@ export const BriefForm: React.FC<BriefFormProps> = ({ initialPackage }) => {
             type="button"
             size="lg"
             variant="outline"
-            className="px-5 py-4"
+            className="px-6 py-4"
             onClick={handleCopyClipboard}
             leftIcon={copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-neutral-400" />}
           >
